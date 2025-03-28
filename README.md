@@ -101,7 +101,7 @@ streamlit run your_app.py --server.port 8501 --server.enableCORS false
 
 ## 🧠 Built With
 
-- [Neo4j GraphRAG](https://github.com/neo4j/graph-rag)
+- [Neo4j GraphRAG](https://github.com/neo4j/neo4j-graphrag-python)
 - [Streamlit](https://streamlit.io/)
 - [OpenAI GPT-4o](https://openai.com/)
 - [NetworkX](https://networkx.org/)
