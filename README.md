@@ -1,18 +1,19 @@
 # 🤖 GraphRAG POPCORN Q&A Interface
 Population Health Modelling Consensus Reporting Network (POPCORN)
 
-A powerful question-answering interface powered by [Neo4j](https://neo4j.com/), [OpenAI](https://openai.com/), and [Streamlit](https://streamlit.io/), built using the [`neo4j-graphrag`](https://github.com/neo4j/neo4j-graphrag-python) framework. This app enables natural language queries over a Neo4j knowledge graph and provides contextual answers with an interactive graph visualization.
+A powerful question-answering interface powered by [Neo4j](https://neo4j.com/), [OpenAI](https://openai.com/), and [Streamlit](https://streamlit.io/), built using the [`neo4j-graphrag`](https://github.com/neo4j/neo4j-graphrag-python) framework. This app enables natural language queries over a Neo4j knowledge graph, providing contextual answers along with interactive graph visualizations.
 
 ---
 
 ## 🚀 Features
 
-- 🔍 Natural Language Querying over a Neo4j graph using OpenAI's GPT-4o
-- 🧠 GraphRAG Retrieval with both full-text and vector search (HybridCypherRetriever)
-- 📎 Contextual Answers generated via templated RAG prompt
-- 🌐 Graph Visualization using PyVis + NetworkX
-- 🎛 Filter Controls to refine visualization by node and edge type
-- 📚 Expandable Context + JSON Debug Info for transparency
+- 🔍 Natural Language Querying over Neo4j graphs using OpenAI's GPT-4o
+- 🧠 GraphRAG retrieval combining full-text and vector search (`HybridCypherRetriever`)
+- 📎 Contextual Answers generated via customizable RAG templates
+- 🌐 Interactive Graph Visualization with PyVis and NetworkX
+- 🎛 Advanced Filter Controls for refining visualizations by node and edge type
+- 🔐 Google OAuth Authentication for secure user access
+- 📚 Expandable Context and detailed JSON Debugging information for transparency
 
 ---
 
@@ -38,44 +39,47 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Create your `.env` file
+### 4. Configure environment variables
 
-In the root directory, create a `.env` file containing:
+Create a `.env` file in the root directory containing:
 
 ```env
 NEO4J_URI=bolt://<your-neo4j-host>:7687
 NEO4J_USERNAME=neo4j
 NEO4J_PASSWORD=your_password
 OPENAI_API_KEY=sk-...
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+REDIRECT_URI=http://localhost:8501
 ```
 
-> **Note:** Be sure not to commit `.env` to version control.
+> **Note:** Never commit your `.env` file to version control.
 
 ---
 
 ## ▶️ Run the App
 
 ```bash
-streamlit run your_app.py
+streamlit run app.py
 ```
 
 - Access locally: `http://localhost:8501`
-- Access remotely: `http://<your-ec2-ip>:8501` (make sure port 8501 is open in your security group)
+- Access remotely: `http://<your-ec2-ip>:8501` (ensure port 8501 is open in your security group)
 
-You can also run it with additional flags to disable CORS or enable production configs:
+You can also disable CORS if needed:
 
 ```bash
-streamlit run your_app.py --server.port 8501 --server.enableCORS false
+streamlit run app.py --server.port 8501 --server.enableCORS false
 ```
 
 ---
 
 ## 📊 Example Use Cases
 
-- Summarize research topics like COVID, Brain-Heart Axis, or Cancer
-- Explore paper-author-abstract relationships dynamically
-- Visualize graph neighborhoods and query paths
-- Enable knowledge-driven Q&A over complex domains
+- Summarize and explore research topics like COVID-19, Brain-Heart Axis, or Cancer
+- Dynamically explore paper-author-abstract relationships
+- Visualize specific graph neighborhoods and relationships
+- Facilitate knowledge-driven Q&A over complex health and scientific domains
 
 ---
 
@@ -83,7 +87,11 @@ streamlit run your_app.py --server.port 8501 --server.enableCORS false
 
 ```
 📦 graphrag-streamlit-app
-├── your_app.py            # Main Streamlit app
+├── app.py                 # Main Streamlit app
+├── utils                  # Helper modules
+│   ├── auth.py            # OAuth authentication logic
+│   ├── neo4j_setup.py     # Neo4j and LLM configuration
+│   └── graph_viz.py       # Graph visualization utilities
 ├── .env                   # API and DB credentials (ignored by Git)
 ├── requirements.txt       # Python dependencies
 └── README.md              # Project documentation
@@ -93,9 +101,9 @@ streamlit run your_app.py --server.port 8501 --server.enableCORS false
 
 ## 🛡 Security Notes
 
-- Never expose your `.env` file publicly
-- Restrict Neo4j access to specific IPs or via secure tunnel
-- For production, consider using HTTPS + authentication (e.g., with Nginx and Certbot)
+- Protect your `.env` file from public exposure
+- Restrict Neo4j database access appropriately
+- Deploy with HTTPS and authentication mechanisms for production environments
 
 ---
 
@@ -106,6 +114,7 @@ streamlit run your_app.py --server.port 8501 --server.enableCORS false
 - [OpenAI GPT-4o](https://openai.com/)
 - [NetworkX](https://networkx.org/)
 - [PyVis](https://pyvis.readthedocs.io/)
+- [Streamlit OAuth](https://github.com/streamlit/streamlit)
 
 ---
 
