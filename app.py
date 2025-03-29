@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import os
 
 # ------------------ Page Config ------------------ #
-st.set_page_config(page_title="GraphRAG Q&A Interface", layout="wide")
+st.set_page_config(page_title="GraphRAG POPCORN Q&A Interface", layout="wide")
 
 # ------------------ Load Environment ------------------ #
 load_dotenv('.env', override=True)
