@@ -1,3 +1,8 @@
 lib/
 myenv/
 .env
+google_credentials.json
+.env.local
+.gitignore
+app_all.py
+app_old.py
