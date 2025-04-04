@@ -3,7 +3,7 @@ Population Health Modelling Consensus Reporting Network (POPCORN)
 
 A powerful question-answering interface powered by [Neo4j](https://neo4j.com/), [OpenAI](https://openai.com/), and [Streamlit](https://streamlit.io/), built using the [`neo4j-graphrag`](https://github.com/neo4j/neo4j-graphrag-python) framework. This app enables natural language queries over a Neo4j knowledge graph, providing contextual answers along with interactive graph visualizations.
 
-Live System: [POPCORN_GraphRAG App](http://ec2-52-60-155-21.ca-central-1.compute.amazonaws.com/popcorn)
+**Live System**: [POPCORN_GraphRAG App](http://ec2-52-60-155-21.ca-central-1.compute.amazonaws.com/popcorn)
 
 ---
 
