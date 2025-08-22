@@ -147,7 +147,7 @@ If you use the **GraphRAG POPCORN Q&A Interface** in your research or projects, 
   title   = {GraphRAG POPCORN Q\&A Interface},
   version = {1.0.0},
   year    = {2025},
-  url     = {https://github.com/your-username/graphrag-streamlit-app},
+  url     = {https://github.com/pouriamrt/POPCORN},
   license = {MIT},
   note    = {Streamlit + Neo4j GraphRAG app for population health modelling and knowledge graph Q\&A}
 }
