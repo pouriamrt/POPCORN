@@ -138,7 +138,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you use the **GraphRAG POPCORN Q&A Interface** in your research or projects, please cite:
 
 **Software**
-> Mortezaagha, P. (2025). *GraphRAG POPCORN Q&A Interface (v1.0.0)*. GitHub. https://github.com/your-username/graphrag-streamlit-app
+> Mortezaagha, P. (2025). *GraphRAG POPCORN Q&A Interface (v1.0.0)*. GitHub. https://github.com/pouriamrt/POPCORN
 
 ### BibTeX
 ```bibtex
